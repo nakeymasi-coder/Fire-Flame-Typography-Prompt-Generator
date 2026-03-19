@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fire Flame Typography Generator | GlamorousGrammyGlowUp</title>
+  <style>
+    :root {
+      --primary: #4F46E5;      /* Royal Blue */
+      --secondary: #312E81;    /* Deep Indigo */
+      --accent: #F59E0B;       /* Gold */
+      --accent-soft: #FCD34D;
+      --bg-dark: #0B1020;
+      --bg-mid: #111827;
+      --panel-bg: #182033;
+      --panel-soft: #1E293B;
+      --text-primary: #FFFFFF;
+      --text-muted: #B8C1D9;
+      --border-color: rgba(255,255,255,0.12);
+      --success: #10B981;
+      color-scheme: dark;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(79, 70, 229, 0.22), transparent 30%),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 25%),
+        linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-mid) 100%);
+      color: var(--text-primary);
+      padding: 22px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1240px;
+      width: 96%;
+      margin: 0 auto;
+      background: rgba(12, 18, 34, 0.94);
+      border: 1px solid rgba(245, 158, 11, 0.18);
+      border-radius: 22px;
+      padding: 36px;
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(79, 70, 229, 0.08) inset;
+      backdrop-filter: blur(6px);
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .brand-kicker {
+      display: inline-block;
+      font-size: 0.9rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .brand-name {
+      font-size: clamp(1.7rem, 4vw, 2.8rem);
+      font-weight: 900;
+      line-height: 1.1;
+      background: linear-gradient(135deg, #ffffff 0%, #dbeafe 35%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .brand-tagline {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-align: center;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      font-size: 1.05rem;
+      max-width: 860px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .top-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .info-card {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.85), rgba(17, 24, 39, 0.95));
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .info-card h2 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--text-muted);
+      font-size: 0.96rem;
+    }
+
+    .info-card ol,
+    .info-card ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.12);
+      border: 1px solid rgba(79, 70, 229, 0.24);
+      color: #E8ECFF;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .helper-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .example-card {
+      background: linear-gradient(180deg, rgba(24, 32, 51, 1), rgba(15, 23, 42, 1));
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .example-card h3 {
+      color: var(--accent);
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+
+    .mini-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #C7D2FE;
+      font-weight: 700;
+    }
+
+    .example-card p,
+    .example-card li {
+      color: var(--text-muted);
+      font-size: 0.93rem;
+    }
+
+    .example-card ul {
+      padding-left: 18px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .use-example-btn {
+      margin-top: auto;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .use-example-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(79, 70, 229, 0.35);
+    }
+
+    details {
+      margin-bottom: 18px;
+      background: var(--panel-bg);
+      border-radius: 14px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    details[open] {
+      border-color: rgba(245, 158, 11, 0.45);
+      box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.08) inset;
+    }
+
+    summary {
+      cursor: pointer;
+      padding: 18px 22px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      background: rgba(79, 70, 229, 0.08);
+      border-bottom: 1px solid var(--border-color);
+      transition: 0.25s ease;
+      user-select: none;
+      list-style: none;
+    }
+
+    summary:hover {
+      background: rgba(79, 70, 229, 0.14);
+      padding-left: 26px;
+    }
+
+    summary::before {
+      content: "▶ ";
+      color: var(--accent);
+      transition: transform 0.3s ease;
+      display: inline-block;
+      margin-right: 4px;
+    }
+
+    details[open] summary::before {
+      transform: rotate(90deg);
+    }
+
+    .details-content {
+      padding: 22px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(410px, 1fr));
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    label {
+      margin-bottom: 8px;
+      font-weight: 700;
+      color: #DBEAFE;
+      font-size: 0.95rem;
+    }
+
+    .field-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      width: 100%;
+    }
+
+    select,
+    .custom-input,
+    textarea,
+    .output-box {
+      padding: 14px 16px;
+      min-height: 50px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      background-color: #111827;
+      color: #ffffff;
+      font-size: 0.98rem;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      width: 100%;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      flex: 1;
+    }
+
+    select option {
+      background: #111827 !important;
+      color: #fff !important;
+    }
+
+    select:hover,
+    .custom-input:hover,
+    textarea:hover {
+      border-color: rgba(245, 158, 11, 0.45);
+    }
+
+    select:focus,
+    .custom-input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.14);
+    }
+
+    select.has-value,
+    .custom-input.has-value {
+      border-color: var(--accent);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .lock-btn {
+      min-width: 92px;
+      padding: 0 15px;
+      height: 50px;
+      border-radius: 10px;
+      background: rgba(79, 70, 229, 0.18);
+      color: #E5E7EB;
+      border: 1px solid rgba(79, 70, 229, 0.5);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+      font-weight: 800;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .lock-btn.locked {
+      background: rgba(245, 158, 11, 0.14);
+      border-color: rgba(245, 158, 11, 0.72);
+      color: var(--accent-soft);
+    }
+
+    .lock-btn:hover {
+      transform: scale(1.03);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .custom-section {
+      margin-top: 24px;
+      padding: 22px;
+      background: rgba(17, 24, 39, 0.85);
+      border-radius: 16px;
+      border: 1px dashed rgba(245, 158, 11, 0.4);
+      margin-bottom: 24px;
+    }
+
+    .custom-section h3 {
+      color: var(--accent);
+      margin-bottom: 8px;
+      font-size: 1.08rem;
+    }
+
+    .custom-help {
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      margin-bottom: 16px;
+    }
+
+    .helper-note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(79, 70, 229, 0.12);
+      border: 1px solid rgba(79, 70, 229, 0.25);
+      color: #E8ECFF;
+      font-size: 0.94rem;
+    }
+
+    .control-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin: 28px 0 20px;
+    }
+
+    button.action-btn {
+      padding: 15px 18px;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.97rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: white;
+    }
+
+    .primary-btn {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    }
+
+    .purple-btn {
+      background: linear-gradient(135deg, #4338CA 0%, #7C3AED 100%);
+    }
+
+    .green-btn {
+      background: linear-gradient(135deg, #059669 0%, #10B981 100%);
+    }
+
+    .gray-btn {
+      background: linear-gradient(135deg, #334155 0%, #475569 100%);
+    }
+
+    button.action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(79, 70, 229, 0.25);
+    }
+
+    #output {
+      margin-top: 8px;
+      padding: 22px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 2px solid rgba(79, 70, 229, 0.25);
+      border-radius: 14px;
+      min-height: 170px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: "Courier New", monospace;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #E2E8F0;
+      resize: vertical;
+      width: 100%;
+    }
+
+    .status-line {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .warning {
+      color: var(--accent-soft);
+      font-weight: 700;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 980px) {
+      .top-grid,
+      .helper-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 14px;
+      }
+
+      .container {
+        padding: 20px;
+        width: 100%;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .control-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .field-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .lock-btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="brand-header">
+      <div class="brand-kicker">GlamorousGrammyGlowUp</div>
+      <div class="brand-name">Digital Products That Slay</div>
+      <div class="brand-tagline">Bold tools for creators who want fire visuals without the headache.</div>
+    </div>
+
+    <h1>Ignite Your Brand With Blazing Fire Typography</h1>
+    <p class="subtitle">
+      Build bold fire-style text prompts fast, then test the result in <strong>ChatGPT</strong> and/or <strong>Gemini</strong> to see which one gives you the look you like best.
+    </p>
+
+    <div class="top-grid">
+      <div class="info-card">
+        <h2>🔥 How to Use This Generator</h2>
+        <ol>
+          <li>Pick the dropdown options you want for the fire text style.</li>
+          <li>Add extra details in the custom text boxes if you want a more specific look.</li>
+          <li>Click <strong>Generate Prompt</strong>.</li>
+          <li>Copy the prompt and paste it into <strong>ChatGPT</strong> and/or <strong>Gemini</strong>.</li>
+          <li>Compare the results and keep the one that hits harder.</li>
+          <li>If you don’t know what to put in the custom text box, go to <strong>ChatGPT</strong> and ask it to help you describe your design idea.</li>
+        </ol>
+
+        <div class="pill-row">
+          <span class="pill">Royal Blue + Gold brand style</span>
+          <span class="pill">Use Randomize for quick ideas</span>
+          <span class="pill">Lock fields you want to keep</span>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <h2>✍️ What to Put in the Custom Text Boxes</h2>
+        <ul>
+          <li><strong>Custom Creative Direction:</strong> the mood, style, or overall vibe you want.</li>
+          <li><strong>Must-Have Elements:</strong> exact things that must show up in the design.</li>
+          <li>Good examples: <em>royal blue flames, gold metallic edges, glam luxury branding, bold poster look, smoky dark background, spark embers, chrome shine</em>.</li>
+          <li>Bad example: <em>make it cool</em>. That’s vague as hell 😏</li>
+        </ul>
+
+        <div class="helper-note">
+          <strong>Stuck?</strong> Go to ChatGPT and type:
+          <br><br>
+          “Help me write a custom text box description for a fire typography design for my brand. I want it to feel bold, glam, royal blue, gold, luxury, and high-energy.”
+        </div>
+      </div>
+    </div>
+
+    <div class="helper-grid">
+      <div class="example-card">
+        <div class="mini-label">Example 1</div>
+        <h3>Luxury Creator Brand Logo</h3>
+        <p><strong>Put this in Custom Creative Direction:</strong><br>luxury glam creator branding, royal blue fire, gold metallic edges, polished premium finish, dark dramatic background</p>
+        <p><strong>Put this in Must-Have Elements:</strong><br>brand name text, royal blue flames, gold shine, smoke, embers, premium social media branding look</p>
+        <ul>
+          <li>Pick a strong option in <strong>Flame & Texture Effects</strong></li>
+          <li>Pick one in <strong>Lighting & Glow</strong></li>
+          <li>Pick one in <strong>Brand Intensity & Vibe</strong></li>
+          <li>Pick one in <strong>Camera & Composition</strong></li>
+        </ul>
+        <button class="use-example-btn" onclick="applyExample(1)">Use This Example</button>
+      </div>
+
+      <div class="example-card">
+        <div class="mini-label">Example 2</div>
+        <h3>Gaming / Esports Fire Text</h3>
+        <p><strong>Put this in Custom Creative Direction:</strong><br>aggressive esports branding, high contrast fire glow, explosive action feel, sharp dramatic energy, tournament graphic style</p>
+        <p><strong>Put this in Must-Have Elements:</strong><br>chrome letters, electric fire, smoke trails, embers, high-energy gaming logo, dark background</p>
+        <ul>
+          <li>Pick one in <strong>Industry & Application</strong> with gaming/esports vibe</li>
+          <li>Pick one in <strong>Explosion & Energy</strong></li>
+          <li>Pick one in <strong>Smoke & Atmosphere</strong></li>
+          <li>Pick one in <strong>Lighting & Glow</strong></li>
+        </ul>
+        <button class="use-example-btn" onclick="applyExample(2)">Use This Example</button>
+      </div>
+
+      <div class="example-card">
+        <div class="mini-label">Example 3</div>
+        <h3>Extreme Sports Promo Text</h3>
+        <p><strong>Put this in Custom Creative Direction:</strong><br>fast-paced extreme sports promo, explosive movement, cinematic action poster, bold adrenaline energy, gritty dramatic mood</p>
+        <p><strong>Put this in Must-Have Elements:</strong><br>blazing flames, motion blur feel, smoke, sparks, hot orange glow, action-event branding</p>
+        <ul>
+          <li>Pick one in <strong>Industry & Application</strong> for sports or racing</li>
+          <li>Pick one in <strong>Camera & Composition</strong></li>
+          <li>Pick one in <strong>Explosion & Energy</strong></li>
+          <li>Pick one in <strong>Flame & Texture Effects</strong></li>
+        </ul>
+        <button class="use-example-btn" onclick="applyExample(3)">Use This Example</button>
+      </div>
+    </div>
+
+    <div id="form-sections"></div>
+
+    <div class="custom-section">
+      <h3>✍️ Custom Details</h3>
+      <div class="custom-help">
+        Add your own direction here. This is where you tell the AI exactly what kind of flavor you want.
+      </div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="custom_creative">Custom Creative Direction</label>
+          <input
+            type="text"
+            id="custom_creative"
+            class="custom-input"
+            placeholder="Example: luxury glam creator branding, royal blue fire, gold metallic edges, dark dramatic background, polished premium finish"
+            oninput="updateInputState(this)"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="custom_elements">Must-Have Elements</label>
+          <input
+            type="text"
+            id="custom_elements"
+            class="custom-input"
+            placeholder="Example: brand name text, royal blue flames, gold shine, smoke, embers, chrome details, premium logo look"
+            oninput="updateInputState(this)"
+          />
+        </div>
+      </div>
+
+      <div class="helper-note">
+        <strong>Best way to use this:</strong> choose your dropdown options first, then use the custom text boxes to add the extra sauce the dropdowns don’t cover.
+      </div>
+    </div>
+
+    <div class="control-bar">
+      <button class="action-btn primary-btn" onclick="generatePrompt()">Generate Prompt</button>
+      <button class="action-btn purple-btn" onclick="randomizeForm()">🎲 Randomize (Unlocked)</button>
+      <button class="action-btn green-btn" onclick="copyPrompt(event)">Copy</button>
+      <button class="action-btn gray-btn" onclick="clearAll()">Clear All</button>
+    </div>
+
+    <textarea id="output" placeholder="Your finished prompt will show up here..." readonly></textarea>
+
+    <div class="status-line">
+      <span id="lengthStatus">0 words · 0 characters</span>
+      <span id="trimWarning" class="warning hidden">⚠️ Prompt optimized for output limits</span>
+    </div>
+
+    <div class="footer-note">
+      Generate your prompt here, then test it in <strong>ChatGPT</strong> and <strong>Gemini</strong> to compare results.
+    </div>
+  </div>
+
+  <script>
+    const data = {
+      page_title: "Fire Flame Typography Generator | GlamorousGrammyGlowUp",
+      hero_title: "IGNITE YOUR BRAND WITH BLAZING FIRE TYPOGRAPHY",
+      hero_subtitle: "Because boring fonts don’t get remembered.",
+      categories: [
+        {
+          id: "flame_texture_effects",
+          name: "Flame & Texture Effects",
+          emoji: "🔥",
+          logic_type: "standard",
+          options: [
+            "Bold typography with intense orange and red flame textures engulfing letters, glowing molten edges",
+            "Professional text design featuring blazing fire effects, amber glow, and dynamic heat distortion patterns",
+            "Metallic lettering surrounded by realistic flame textures, ember particles, and scorched burnt edges",
+            "Typography with molten lava flowing through letters, creating intense heat shimmer and glow effects",
+            "Professional fire-themed text with charred black edges, bright orange flames, and particle effects",
+            "Bold letters wrapped in realistic flame textures, glowing embers, and intense heat distortion",
+            "Typography featuring blazing fire effects with gradient flames from yellow to deep red tones",
+            "Professional text design with molten metal appearance, flame textures, and intense thermal glow",
+            "Letters engulfed in dynamic flame effects, ember particles floating, and scorched burnt texture overlay",
+            "Typography with realistic fire textures, glowing hot spots, and charred edges for maximum intensity",
+            "Professional lettering featuring intense orange flames, molten lava drips, and heat wave distortion",
+            "Bold text with blazing fire effects, particle systems, and glowing embers throughout letters",
+            "Typography surrounded by realistic flame textures, thermal glow, and dynamic heat shimmer effects",
+            "Professional design with charred burnt edges, intense flame textures, and molten glow accents",
+            "Letters featuring molten lava effects, ember particles, and intense orange-red flame textures",
+            "Typography with blazing fire intensity, glowing heat effects, and realistic flame particle systems",
+            "Professional text design with intense flame textures, scorched edges, and thermal distortion patterns",
+            "Bold lettering wrapped in realistic molten lava effects, ember particles, and intense heat glow",
+            "Typography featuring dynamic flame textures, charred burnt appearance, and glowing thermal highlights",
+            "Professional fire-themed text with intense orange flames, particle effects, and heat distortion",
+            "Letters engulfed in blazing flame textures, molten edges, and realistic ember particle systems",
+            "Typography with intense thermal glow, flame textures, and charred burnt edges throughout",
+            "Professional design featuring realistic fire effects, glowing molten appearance, and intense heat shimmer",
+            "Bold text with dynamic flame textures, scorched edges, and intense orange-red glow effects",
+            "Typography surrounded by blazing flames, ember particles, and intense molten lava textures",
+            "Professional lettering with intense flame effects, thermal distortion, and glowing heat intensity",
+            "Text featuring realistic molten metal appearance, flame textures, and charred burnt edges",
+            "Typography with intense blazing fire effects, particle systems, and glowing thermal highlights",
+            "Professional design with dynamic flame textures, molten glow, and intense heat distortion patterns",
+            "Bold letters featuring intense flame textures, ember particles, and scorched burnt appearance"
+          ]
+        },
+        {
+          id: "smoke_atmosphere",
+          name: "Smoke & Atmosphere",
+          emoji: "💨",
+          logic_type: "standard",
+          options: [
+            "Dense billowing smoke trails with wispy tendrils, ash particles floating upward, dark charcoal contrast against bright flames",
+            "Thick atmospheric smoke clouds with swirling vortex patterns, glowing embers embedded in dark smoke, intense heat distortion waves",
+            "Delicate smoke wisps curling around burning text, fine ash debris suspended in air, subtle orange glow through gray haze",
+            "Roiling dark smoke with dramatic turbulence, bright red flame edges visible through smoke layers, extreme heat shimmer distortion",
+            "Wispy smoke trails with ethereal quality, scattered ash particles catching light, soft atmospheric fog with orange undertones",
+            "Heavy industrial smoke clouds, thick charcoal gray with black shadows, intense heat distortion creating wavy air ripples",
+            "Intricate smoke patterns swirling counterclockwise, fine ash debris elements, glowing embers visible through translucent smoke wisps",
+            "Billowing smoke with dramatic upward momentum, dark contrast against bright yellow flames, visible heat distortion and air waves",
+            "Delicate wispy smoke trails with cinematic quality, light gray ash particles, subtle glow creating atmospheric depth and drama",
+            "Thick roiling smoke clouds with turbulent motion, dark charcoal tones, bright flame edges piercing through smoke layers dramatically",
+            "Fine smoke wisps with elegant curling patterns, suspended ash debris catching light, warm orange glow through gray smoke",
+            "Dense atmospheric smoke with swirling vortex motion, black shadow areas, intense heat distortion creating visible air displacement",
+            "Wispy smoke trails with ethereal floating quality, light ash particles drifting, soft luminous glow creating mysterious atmosphere",
+            "Heavy billowing smoke clouds with dramatic turbulence, dark contrast with bright flame edges, extreme heat shimmer distortion visible",
+            "Intricate smoke patterns with delicate wisps, fine ash elements suspended midair, glowing embers creating warm atmospheric lighting",
+            "Thick dark smoke with roiling motion, charcoal gray tones with black shadows, bright red flame visible through smoke",
+            "Elegant smoke trails with graceful curves, light ash debris particles, subtle orange luminescence creating atmospheric depth effect",
+            "Intense billowing smoke clouds, heavy charcoal atmosphere, visible heat distortion waves creating dramatic air displacement effect",
+            "Delicate wispy smoke with cinematic quality, fine suspended ash particles, soft warm glow creating mysterious smoky ambiance",
+            "Roiling dark smoke with turbulent swirling patterns, bright flame edges piercing through, extreme heat distortion shimmer effect",
+            "Fine smoke wisps with elegant floating motion, scattered ash debris elements, glowing embers creating warm atmospheric contrast",
+            "Dense atmospheric smoke clouds with dramatic upward flow, dark charcoal tones, intense heat distortion visible throughout",
+            "Wispy smoke trails with ethereal quality, light ash particles catching light, soft orange glow creating atmospheric mystery",
+            "Thick billowing smoke with turbulent motion, heavy charcoal atmosphere, bright flame edges with extreme heat shimmer distortion",
+            "Intricate smoke patterns with delicate curling wisps, suspended ash particles, warm glowing embers creating dramatic atmosphere",
+            "Heavy dark smoke clouds with roiling turbulence, black shadow areas, bright red flame visible creating strong contrast",
+            "Elegant smoke trails with graceful swirling motion, fine ash debris floating, subtle luminous glow creating cinematic effect",
+            "Intense billowing smoke with dramatic upward momentum, charcoal gray atmosphere, visible heat distortion creating air wave ripples",
+            "Delicate wispy smoke with soft ethereal quality, light suspended ash elements, warm orange glow creating atmospheric depth",
+            "Thick roiling smoke clouds with turbulent swirling patterns, dark contrast, bright flames piercing through with intense heat distortion"
+          ]
+        },
+        {
+          id: "lighting_glow",
+          name: "Lighting & Glow",
+          emoji: "✨",
+          logic_type: "lighting",
+          options: [
+            "Bold typography with intense orange-red flame gradient, glowing heat core effect, dramatic backlighting, explosive energy",
+            "Professional text design featuring yellow flame highlights, deep orange glow, fiery heat distortion, cinematic lighting",
+            "Elegant lettering with molten lava texture, bright yellow flame accents, intense red-orange gradient, dramatic shadows",
+            "Modern typography surrounded by glowing fire effect, orange heat waves, yellow highlights, explosive energy backdrop",
+            "Sophisticated text with flame gradient overlay, vibrant orange-red core glow, yellow flame tips, theatrical lighting",
+            "Dynamic lettering featuring intense heat core glow, orange-red flame gradient, yellow highlights, dramatic rim lighting",
+            "Professional typography with fiery orange gradient, glowing yellow accents, deep red heat core, explosive visual impact",
+            "Sleek text design with flame texture overlay, orange-red glow effect, yellow flame highlights, dramatic backlighting",
+            "Bold lettering surrounded by intense flame gradient, glowing heat core, orange-red tones, yellow highlights, cinematic effect",
+            "Elegant typography with molten fire effect, vibrant orange glow, yellow flame accents, deep red core, theatrical lighting",
+            "Modern text with glowing flame aura, orange-red gradient, yellow highlights, intense heat core glow, dramatic shadows",
+            "Professional lettering featuring intense orange flame gradient, glowing yellow accents, red heat core, explosive energy effect",
+            "Sophisticated typography with fiery glow effect, orange-red flame gradient, yellow highlights, dramatic backlighting, cinematic quality",
+            "Dynamic text design with glowing heat core, intense orange-red gradient, yellow flame tips, dramatic lighting effect",
+            "Bold lettering with flame overlay texture, vibrant orange glow, yellow accents, deep red core, theatrical backlighting",
+            "Professional typography featuring molten gradient effect, glowing orange-red flame, yellow highlights, intense heat core, dramatic shadows",
+            "Elegant text with intense flame glow, orange-red gradient, yellow flame accents, glowing heat core, cinematic lighting",
+            "Modern lettering surrounded by fiery glow, vibrant orange gradient, yellow highlights, deep red heat effect, explosive energy",
+            "Sophisticated typography with glowing flame effect, intense orange-red core, yellow accents, dramatic backlighting, theatrical quality",
+            "Dynamic text design featuring orange-red flame gradient, glowing yellow highlights, intense heat core, dramatic lighting effect",
+            "Professional lettering with molten fire texture, vibrant orange glow, yellow flame tips, deep red core, cinematic effect",
+            "Bold typography with intense glowing flame aura, orange-red gradient, yellow highlights, explosive heat core, dramatic shadows",
+            "Elegant text featuring fiery orange gradient, glowing yellow accents, deep red heat core, intense backlighting, theatrical effect",
+            "Modern typography with flame overlay effect, vibrant orange-red glow, yellow highlights, glowing heat core, cinematic quality",
+            "Sophisticated lettering surrounded by intense flame glow, orange gradient, yellow accents, deep red core, dramatic lighting",
+            "Dynamic text with molten gradient effect, glowing orange-red flame, yellow highlights, intense heat core, explosive visual impact",
+            "Professional typography featuring intense orange flame gradient, glowing yellow tips, deep red heat core, dramatic backlighting",
+            "Bold lettering with fiery glow effect, vibrant orange-red gradient, yellow flame accents, glowing heat core, theatrical lighting",
+            "Elegant typography with glowing flame texture, intense orange gradient, yellow highlights, deep red core, cinematic backlighting",
+            "Modern text design featuring explosive flame effect, orange-red glow, yellow accents, intense heat core, dramatic shadows"
+          ]
+        },
+        {
+          id: "camera_composition",
+          name: "Camera & Composition",
+          emoji: "📸",
+          logic_type: "camera",
+          options: [
+            "Low angle fire typography shot with dramatic upward perspective, intense orange flames consuming letters, strong directional shadows cast downward",
+            "Dynamic action composition featuring blazing text from below, high-contrast flame details, powerful upward momentum with cinematic lighting",
+            "Ground-level fire typography with aggressive directional shadows, explosive flame bursts surrounding letters, high-octane energy and movement",
+            "Low angle power shot of burning text with strong backlighting, dramatic shadow play across surfaces, intense heat distortion effects",
+            "Upward framing of flaming letters with dynamic action composition, bold directional shadows, smoking embers creating depth and drama",
+            "High-octane fire typography shot from below, powerful shadows cast upward, intense flame details with cinematic color grading",
+            "Low angle composition of blazing text with strong directional light, dramatic shadows defining letter shapes, explosive visual impact",
+            "Dynamic action shot of fire letters from ground perspective, intense orange glow with deep shadows, high-energy movement",
+            "Power angle fire typography with aggressive flame details, strong directional shadows creating depth, cinematic low-angle framing",
+            "Upward angle burning text composition with dynamic shadows, intense flame bursts, high-octane visual energy and motion blur",
+            "Low angle fire letters with dramatic directional backlighting, powerful shadow composition, explosive flames with cinematic depth",
+            "High-octane typography shot featuring intense flames from below, strong directional shadows, dynamic action composition with heat distortion",
+            "Ground-level power shot of blazing text, aggressive directional lighting, dramatic shadows defining letter structure, intense visual drama",
+            "Low angle fire composition with dynamic action framing, strong upward shadows, intense flame details and cinematic color contrast",
+            "Explosive fire typography from below angle, powerful directional shadows, high-octane energy with smoking embers and flame bursts",
+            "Dynamic action fire letters shot from ground level, intense directional shadows, blazing orange flames with cinematic depth",
+            "Power angle burning text composition with strong shadows cast upward, intense flame details, high-octane visual impact",
+            "Low angle fire typography featuring aggressive flames, dramatic directional shadows, dynamic action composition with explosive visual energy",
+            "Upward framing of blazing letters with intense directional backlighting, powerful shadows, high-octane flame bursts and movement",
+            "Ground perspective fire composition with strong directional shadows, intense orange glow, dynamic action with cinematic lighting effects",
+            "Low angle power shot of flaming text with aggressive shadows, explosive flame details, high-octane energy and visual drama",
+            "Dynamic fire typography from below featuring intense directional light, powerful shadows defining letters, cinematic action composition",
+            "High-octane burning text shot with upward angle framing, strong shadows, intense flame bursts, explosive visual momentum",
+            "Low angle fire letters with dramatic action composition, powerful directional shadows, intense flames and cinematic color grading",
+            "Ground-level power angle typography featuring blazing flames, aggressive shadows, dynamic action with high-octane visual intensity",
+            "Explosive fire composition from below angle, intense directional shadows, blazing text with cinematic depth and movement",
+            "Low angle burning letters shot with strong backlighting, dramatic directional shadows, high-octane flame details and visual drama",
+            "Dynamic action fire typography featuring upward perspective, powerful shadows, intense orange flames with cinematic energy",
+            "Power shot of flaming text from ground level, aggressive directional shadows, explosive flame bursts with high-octane impact",
+            "Low angle fire composition with intense directional lighting, dramatic shadows, dynamic action framing and cinematic visual intensity"
+          ]
+        },
+        {
+          id: "explosion_energy",
+          name: "Explosion & Energy",
+          emoji: "💥",
+          logic_type: "standard",
+          options: [
+            "Explosive fire typography with dynamic flame tongues, intense heat distortion, and raw elemental energy bursting outward",
+            "Bold lettering engulfed in roaring inferno, sharp fire edges, adrenaline-fueled intensity, and violent combustion effects",
+            "Typography consumed by aggressive orange and red flames, chaotic energy waves, and explosive force radiating outward",
+            "Powerful text surrounded by jagged fire tongues, molten edges, intense heat shimmer, and untamed elemental fury",
+            "Dynamic lettering with explosive flame bursts, high-energy plasma effects, scorching intensity, and raw power unleashed",
+            "Typography wreathed in wild fire, sharp flame patterns, explosive momentum, and intense adrenaline rush visualization",
+            "Bold text engulfed in roaring flames with violent combustion, heat distortion, and explosive energy waves",
+            "Lettering consumed by intense inferno, jagged fire tongues lashing outward, explosive force, and raw elemental chaos",
+            "Typography surrounded by explosive fire burst, dynamic flame shapes, intense heat effects, and untamed energy",
+            "Powerful lettering with aggressive flames, sharp fire edges, combustion particles, and explosive adrenaline-driven intensity",
+            "Text enveloped in violent inferno, roaring fire tongues, explosive momentum, and raw elemental force visualization",
+            "Dynamic typography with explosive flame eruption, intense heat distortion, chaotic fire patterns, and energy release",
+            "Bold lettering engulfed in intense flames, jagged fire shapes, explosive combustion, and adrenaline-fueled power",
+            "Typography wreathed in roaring inferno, sharp flame tongues, explosive energy waves, and untamed elemental fury",
+            "Lettering consumed by aggressive fire burst, intense heat shimmer, violent combustion effects, and raw explosive force",
+            "Powerful text surrounded by explosive flames, dynamic fire patterns, intense adrenaline rush, and elemental chaos",
+            "Typography with violent fire eruption, jagged flame edges, explosive momentum, and intense heat distortion effects",
+            "Bold lettering engulfed in roaring combustion, sharp fire tongues, explosive force, and raw elemental intensity",
+            "Dynamic text surrounded by intense inferno, explosive flame bursts, chaotic energy, and untamed fire visualization",
+            "Typography consumed by aggressive flames, violent combustion particles, explosive intensity, and adrenaline-driven power release",
+            "Lettering wreathed in roaring fire, sharp flame shapes, explosive energy waves, and intense elemental fury",
+            "Powerful text with explosive flame eruption, intense heat effects, jagged fire patterns, and raw combustion force",
+            "Bold typography engulfed in violent inferno, dynamic flame tongues, explosive momentum, and adrenaline-fueled intensity",
+            "Text surrounded by intense fire burst, sharp combustion edges, explosive energy, and untamed elemental chaos",
+            "Dynamic lettering consumed by roaring flames, jagged fire shapes, explosive force, and intense heat distortion",
+            "Typography with aggressive fire eruption, violent flame patterns, explosive intensity, and raw adrenaline rush effects",
+            "Lettering engulfed in intense inferno, sharp flame tongues, explosive combustion, and powerful elemental force",
+            "Bold text surrounded by roaring fire, dynamic flame burst, explosive energy waves, and chaotic intensity",
+            "Powerful typography with violent flames, jagged fire edges, explosive momentum, and intense adrenaline visualization",
+            "Text consumed by intense combustion, sharp flame shapes, explosive force, and raw elemental fury unleashed"
+          ]
+        },
+        {
+          id: "brand_intensity",
+          name: "Brand Intensity & Vibe",
+          emoji: "⚡",
+          logic_type: "standard",
+          options: [
+            "Aggressive fire typography with blazing red and orange flames consuming bold letters, extreme intensity",
+            "Molten metal text with white-hot flames erupting from each character, competitive energy aesthetic",
+            "Inferno-style lettering featuring intense orange fire with sharp angular flame patterns around words",
+            "Explosive typography with violent red flames and smoke effects, high-octane action atmosphere",
+            "Scorching hot text with dramatic fire bursts, glowing embers, and intense heat distortion effects",
+            "Blazing bold letters wrapped in fierce orange and yellow flames, powerful energy visualization",
+            "Fiery competition typography with racing flames and intense heat aura surrounding text characters",
+            "Volcanic text design with erupting molten fire, extreme intensity and raw power aesthetic",
+            "Combustion-style lettering with explosive flame effects, sharp edges, and high-energy atmosphere",
+            "Inferno typography featuring intense red-orange flames with dramatic smoke and heat waves",
+            "Raging fire text with aggressive flame patterns, extreme competition spirit and intense vibe",
+            "Explosive lettering surrounded by violent flames, intense action atmosphere with powerful energy",
+            "Scorched typography with blazing fire consuming letters, high-intensity and extreme action feel",
+            "Fierce flame lettering with intense orange glow, competitive energy and powerful atmosphere",
+            "Volcanic eruption text with molten flames, extreme intensity and raw powerful energy",
+            "Blazing competition typography with sharp flame effects and intense heat distortion around words",
+            "Inferno-style lettering with aggressive red flames, intense action atmosphere and high energy",
+            "Combustion text design with explosive fire bursts, extreme intensity and powerful visual impact",
+            "Raging flames typography with intense orange-red coloring, competitive spirit and action atmosphere",
+            "Scorching hot lettering with violent fire effects, extreme intensity and powerful energy association",
+            "Fierce blazing text with intense flame patterns, high-octane action and competitive energy",
+            "Explosive fire typography with dramatic flame eruptions, extreme intensity and powerful atmosphere",
+            "Inferno lettering featuring intense heat effects, molten appearance, and extreme action vibes",
+            "Aggressive flame text with sharp orange-red fire, intense competition and powerful energy",
+            "Blazing intensity typography with consuming flames, extreme action atmosphere and high energy",
+            "Volcanic fire lettering with explosive effects, intense heat distortion, and powerful energy",
+            "Combustion-style text with violent flame patterns, extreme intensity and action-packed atmosphere",
+            "Raging inferno typography with intense orange flames, competitive spirit and powerful energy",
+            "Scorched extreme lettering with blazing fire effects, intense action and high-energy atmosphere",
+            "Fierce explosive typography with intense flames and heat effects, extreme power and intensity"
+          ]
+        },
+        {
+          id: "industry_vertical",
+          name: "Industry & Application",
+          emoji: "🎯",
+          logic_type: "standard",
+          options: [
+            "Intense fire flame typography with glowing red and orange letters, dynamic motion blur, extreme sports aesthetic",
+            "Metallic chrome letters engulfed in blazing flames, sharp edges, high contrast, perfect for gaming logos",
+            "Bold sans-serif text surrounded by explosive fire effects, cinematic lighting, professional motorsports branding",
+            "Dripping molten lava typography with fierce orange flames, textured surface, energy drink packaging style",
+            "Heavy metal band lettering consumed by wild crimson fire, dark background, aggressive stage lighting",
+            "Racing-inspired flaming text with speed lines, neon accents, high-octane action sports event design",
+            "3D extruded letters with realistic fire simulation, embers floating, professional esports tournament graphics",
+            "Graffiti-style burning text with vibrant yellow and red flames, street art meets digital design",
+            "Sleek gaming typography with electric blue fire overlay, futuristic effects, competitive esports branding",
+            "Extreme sports action text wreathed in dynamic orange flames, motion-captured fire particles, professional quality",
+            "Hardcore metal band lettering with black flames on crimson background, distressed texture, concert poster style",
+            "Motorsports championship text engulfed in realistic fire, chrome finish, high-speed racing aesthetic",
+            "Bold action sports logo with explosive flame effects, gradient fire colors, youth-oriented energy drink style",
+            "Edgy gaming text with plasma fire effects, neon glow, dark atmospheric background, professional esports design",
+            "Intense flame typography with charred edges, smoke effects, extreme sports event branding, cinematic quality",
+            "Metal band lettering with supernatural purple and orange flames, occult aesthetic, professional album artwork",
+            "Racing text with speed-blur fire effects, metallic sheen, motorsports championship quality design",
+            "Explosive action sports typography with multi-colored flames, dynamic composition, high-impact visual presence",
+            "Gaming esports text with electric fire effects, cyber aesthetic, professional tournament graphics, glowing accents",
+            "Heavy metal band logo with wild crimson flames, aggressive styling, concert and merchandise quality",
+            "Extreme sports event text surrounded by realistic fire simulation, professional photography quality, action-packed",
+            "Motorsports branding with chrome letters and blazing flames, speed-inspired design, competitive racing aesthetic",
+            "Energy drink typography with vibrant flame effects, bold colors, youth market appeal, professional packaging design",
+            "Gaming tournament text with dynamic fire particles, neon highlights, esports professional standard quality",
+            "Action sports lettering engulfed in orange and yellow flames, motion effects, high-energy visual impact",
+            "Metal band typography with dark flames and gothic styling, album cover quality, professional music branding",
+            "Motorsports championship text with realistic fire effects, metallic finish, professional racing event graphics",
+            "Extreme sports logo with explosive multi-colored flames, dynamic composition, youth-oriented professional design",
+            "Gaming esports text with plasma fire effects, dark background, professional tournament branding, competitive aesthetic",
+            "Action-packed typography with intense flame effects, cinematic lighting, professional extreme sports event quality"
+          ]
+        }
+      ]
+    };
+
+    const lockedFields = new Set();
+
+    const examplePresets = {
+      1: {
+        customCreative: "luxury glam creator branding, royal blue fire, gold metallic edges, polished premium finish, dark dramatic background",
+        customElements: "brand name text, royal blue flames, gold shine, smoke, embers, premium social media branding look",
+        picks: {
+          flame_texture_effects: 0,
+          lighting_glow: 8,
+          camera_composition: 3,
+          brand_intensity: 5
+        }
+      },
+      2: {
+        customCreative: "aggressive esports branding, high contrast fire glow, explosive action feel, sharp dramatic energy, tournament graphic style",
+        customElements: "chrome letters, electric fire, smoke trails, embers, high-energy gaming logo, dark background",
+        picks: {
+          industry_vertical: 13,
+          explosion_energy: 4,
+          smoke_atmosphere: 1,
+          lighting_glow: 24
+        }
+      },
+      3: {
+        customCreative: "fast-paced extreme sports promo, explosive movement, cinematic action poster, bold adrenaline energy, gritty dramatic mood",
+        customElements: "blazing flames, motion blur feel, smoke, sparks, hot orange glow, action-event branding",
+        picks: {
+          industry_vertical: 29,
+          camera_composition: 11,
+          explosion_energy: 0,
+          flame_texture_effects: 11
+        }
+      }
+    };
+
+    function renderSections() {
+      const container = document.getElementById("form-sections");
+      container.innerHTML = "";
+
+      data.categories.forEach(category => {
+        const details = document.createElement("details");
+        details.open = true;
+
+        const summary = document.createElement("summary");
+        summary.textContent = `${category.emoji} ${category.name}`;
+        details.appendChild(summary);
+
+        const content = document.createElement("div");
+        content.className = "details-content";
+
+        const formGrid = document.createElement("div");
+        formGrid.className = "form-grid";
+
+        const formGroup = document.createElement("div");
+        formGroup.className = "form-group";
+
+        const label = document.createElement("label");
+        label.setAttribute("for", category.id);
+        label.textContent = category.name;
+
+        const fieldRow = document.createElement("div");
+        fieldRow.className = "field-row";
+
+        const select = document.createElement("select");
+        select.id = category.id;
+        select.dataset.logic = category.logic_type || "standard";
+        select.setAttribute("onchange", "updateFieldState(this)");
+
+        const defaultOption = document.createElement("option");
+        defaultOption.value = "";
+        defaultOption.textContent = "None";
+        select.appendChild(defaultOption);
+
+        category.options.forEach(optionText => {
+          const opt = document.createElement("option");
+          opt.value = optionText;
+          opt.textContent = optionText;
+          select.appendChild(opt);
+        });
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "lock-btn";
+        button.textContent = "UNLOCK";
+        button.title = "Lock this field";
+        button.setAttribute("onclick", `toggleLock('${category.id}')`);
+
+        fieldRow.appendChild(select);
+        fieldRow.appendChild(button);
+        formGroup.appendChild(label);
+        formGroup.appendChild(fieldRow);
+        formGrid.appendChild(formGroup);
+        content.appendChild(formGrid);
+        details.appendChild(content);
+        container.appendChild(details);
+      });
+    }
+
+    function getValue(id) {
+      const element = document.getElementById(id);
+      return element ? element.value : "";
+    }
+
+    function getAllSelects() {
+      return document.querySelectorAll("select");
+    }
+
+    function updateInputState(input) {
+      if (input.value.trim()) {
+        input.classList.add("has-value");
+      } else {
+        input.classList.remove("has-value");
+      }
+    }
+
+    function updateFieldState(select) {
+      if (select.value && select.value.toLowerCase() !== "none") {
+        select.classList.add("has-value");
+      } else {
+        select.classList.remove("has-value");
+      }
+    }
+
+    function enforcePromptLimit(text) {
+      const words = text.trim().split(/\s+/).filter(Boolean);
+      let trimmed = false;
+
+      if (words.length > 280) {
+        text = words.slice(0, 280).join(" ");
+        trimmed = true;
+      }
+
+      if (text.length > 1990) {
+        text = text.slice(0, 1990);
+        trimmed = true;
+      }
+
+      document.getElementById("trimWarning").classList.toggle("hidden", !trimmed);
+      return text;
+    }
+
+    function updateLengthStatus(text) {
+      const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+      const chars = text.length;
+      document.getElementById("lengthStatus").textContent = `${words} words · ${chars} characters`;
+    }
+
+    function toggleLock(fieldId) {
+      const button = document.querySelector(`button[onclick="toggleLock('${fieldId}')"]`);
+
+      if (lockedFields.has(fieldId)) {
+        lockedFields.delete(fieldId);
+        button.textContent = "UNLOCK";
+        button.classList.remove("locked");
+        button.title = "Lock this field";
+      } else {
+        lockedFields.add(fieldId);
+        button.textContent = "LOCKED";
+        button.classList.add("locked");
+        button.title = "Unlock this field";
+      }
+    }
+
+    function generatePrompt() {
+      const values = {};
+
+      getAllSelects().forEach(select => {
+        if (
+          select.value &&
+          select.value.toLowerCase() !== "none"
+        ) {
+          const label = select.closest(".form-group").querySelector("label").textContent.trim();
+          values[label] = select.value;
+        }
+      });
+
+      const customCreative = document.getElementById("custom_creative").value.trim();
+      if (customCreative) {
+        values["Creative Direction"] = customCreative;
+      }
+
+      const customElements = document.getElementById("custom_elements").value.trim();
+      if (customElements) {
+        values["Must-Have Elements"] = customElements;
+      }
+
+      if (Object.keys(values).length === 0) {
+        alert("Pick at least one option before generating.");
+        return;
+      }
+
+      let promptSections = [];
+
+      const subject = "Professional fire flame typography design for bold branding, logo design, promotional graphics, or social media visuals";
+      promptSections.push(`Subject & Identity\n${subject}`);
+
+      for (const [category, value] of Object.entries(values)) {
+        promptSections.push(`${category}\n${value}`);
+      }
+
+      promptSections.push("Usage Note\nGenerate this image in ChatGPT and/or Gemini and compare which result you like best");
+      promptSections.push("Rendering & Quality\nhyperrealistic, 8k resolution, professional quality, award-winning, polished commercial design");
+      promptSections.push("Technical Tags\n--ar 2:3 --v 6.1 --style raw --s 600");
+
+      let fullPrompt = promptSections.join("\n\n");
+      fullPrompt = enforcePromptLimit(fullPrompt);
+
+      document.getElementById("output").value = fullPrompt;
+      updateLengthStatus(fullPrompt);
+    }
+
+    function randomizeForm() {
+      getAllSelects().forEach(select => {
+        if (lockedFields.has(select.id)) return;
+
+        const visibleOptions = Array.from(select.options).filter(opt =>
+          opt.value !== "" && opt.value.toLowerCase() !== "none" && !opt.hidden
+        );
+
+        if (visibleOptions.length > 0) {
+          const randomOption = visibleOptions[Math.floor(Math.random() * visibleOptions.length)];
+          select.value = randomOption.value;
+          updateFieldState(select);
+        }
+      });
+
+      generatePrompt();
+    }
+
+    function copyPrompt(event) {
+      const output = document.getElementById("output");
+      if (output.value.trim()) {
+        output.select();
+        output.setSelectionRange(0, 99999);
+        document.execCommand("copy");
+
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = "COPIED!";
+        setTimeout(() => {
+          button.textContent = originalText;
+        }, 1800);
+      } else {
+        alert("Generate a prompt first.");
+      }
+    }
+
+    function clearAll() {
+      getAllSelects().forEach(select => {
+        select.selectedIndex = 0;
+        select.classList.remove("has-value");
+      });
+
+      document.getElementById("custom_creative").value = "";
+      document.getElementById("custom_elements").value = "";
+      document.querySelectorAll(".custom-input").forEach(input => {
+        input.classList.remove("has-value");
+      });
+
+      document.getElementById("output").value = "";
+      updateLengthStatus("");
+      document.getElementById("trimWarning").classList.add("hidden");
+
+      lockedFields.clear();
+      document.querySelectorAll(".lock-btn").forEach(btn => {
+        btn.textContent = "UNLOCK";
+        btn.classList.remove("locked");
+        btn.title = "Lock this field";
+      });
+    }
+
+    function applyExample(exampleNumber) {
+      const preset = examplePresets[exampleNumber];
+      if (!preset) return;
+
+      if (!lockedFields.has("custom_creative")) {
+        document.getElementById("custom_creative").value = preset.customCreative;
+        updateInputState(document.getElementById("custom_creative"));
+      }
+
+      if (!lockedFields.has("custom_elements")) {
+        document.getElementById("custom_elements").value = preset.customElements;
+        updateInputState(document.getElementById("custom_elements"));
+      }
+
+      Object.entries(preset.picks).forEach(([fieldId, optionIndex]) => {
+        if (lockedFields.has(fieldId)) return;
+
+        const select = document.getElementById(fieldId);
+        if (select && select.options[optionIndex + 1]) {
+          select.selectedIndex = optionIndex + 1; // +1 because "None" is first
+          updateFieldState(select);
+        }
+      });
+
+      generatePrompt();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      renderSections();
+      updateLengthStatus("");
+    });
+  </script>
+</body>
+</html>
